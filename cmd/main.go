@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-protocol-buffer3/src/complex"
 	"go-protocol-buffer3/src/enums"
 	"go-protocol-buffer3/src/simple"
 	"io/ioutil"
@@ -18,6 +19,35 @@ func main() {
 	jsonDemo()
 
 	enumExample()
+
+	complexExample()
+
+}
+
+func complexExample() {
+
+	cm := &complex.ComplexMessage{
+		OneDummy: &complex.DummyMessage{
+			Id:   1,
+			Name: "Teste",
+		},
+		MultipleDummy: []*complex.DummyMessage{
+			{
+				Id:   2,
+				Name: "Teste 2",
+			},
+			{
+				Id:   3,
+				Name: "Teste3",
+			},
+			{
+				Id:   4,
+				Name: "Teste4",
+			},
+		},
+	}
+
+	fmt.Println(cm)
 
 }
 
