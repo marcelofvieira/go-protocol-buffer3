@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-protocol-buffer3/src/enums"
 	"go-protocol-buffer3/src/simple"
 	"io/ioutil"
 	"log"
@@ -15,6 +16,19 @@ func main() {
 	writeAndReadFileFromDisk()
 
 	jsonDemo()
+
+	enumExample()
+
+}
+
+func enumExample() {
+
+	em := &enums.EnumMessage{
+		Id:           42,
+		DayOfTheWeek: enums.DayOfTheWeek_FRIDAY,
+	}
+
+	fmt.Println(em)
 
 }
 
