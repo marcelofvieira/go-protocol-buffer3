@@ -1,9 +1,6 @@
 syntax = "proto3";
 
-package main;
-
-option go_package = "github.com/goprotobuffer/simple";
-
+option go_package = "/simple";
 
 message SimpleMessage {
   int32 id = 1;
